@@ -7,7 +7,8 @@
 <br>
 Máme mít takovou strukturu projektu:
 
-`. <br>
+```
+. <br>
 ├── backend <br>
 │   ├── venv <br>
 │   ├── database.py <br>
@@ -15,4 +16,5 @@ Máme mít takovou strukturu projektu:
 │   ├── models.py <br>
 │   ├── music_reviews_app.db <br>
 │   └── requirements.txt <br>
-└── frontend <br>`
+└── frontend <br>
+```
