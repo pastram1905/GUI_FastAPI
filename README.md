@@ -1,7 +1,17 @@
 # Fast API pro mobilní aplikace
 ## Konfigurace projektu
-* Vytvořime si složku fastapi-reactnative
 *  Vytvořime si virtualní prostředí: `py -3 -m venv venv`
 *   Aktivujeme ho: `venv/Scripts/activate`
+*   Budeme potřebovat frameworky FastAPI, Uvicorn a SQLAlchemy. Nainstalujeme si to: `pip install fastapi uvicorn sqlalchemy`.
+*   Uděláme soubor `requirements.txt`: `pip freeze > requirements.txt`
+Máme mít takovou strukturu projektu:
 
-Budeme potřebovat frameworky FastAPI, Uvicorn a SQLAlchemy. Nainstalujeme si to: `pip install fastapi uvicorn sqlalchemy`
+.
+|-- backend
+       |------- __pycache__
+       |------- venv
+       |------- database.py
+       |------- main.py
+       |------- models.py
+       |------- music_reviews_app.db
+|-- frontend
