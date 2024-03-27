@@ -6,8 +6,7 @@
 *   Uděláme soubor `requirements.txt`: `pip freeze > requirements.txt`
 <br>
 Máme mít takovou strukturu projektu:<br>
-```
-.
+```.
 ├── backend
 │   ├── venv
 │   ├── database.py
@@ -15,8 +14,7 @@ Máme mít takovou strukturu projektu:<br>
 │   ├── models.py
 │   ├── music_reviews_app.db
 │   └── requirements.txt
-└── frontend
-```
+└── frontend```
 
 ## Připojení ke databázi a další nastavení
 Pro jednoduchost budeme použivat SQLite. V souboru `database.py` naimportujeme metody z baličku SQLAlchemy.
