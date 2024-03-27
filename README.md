@@ -9,10 +9,10 @@ Máme mít takovou strukturu projektu:
 
 . <br>
 ├── backend <br>
-|       ├── __pycache__ <br>
-|       ├── venv <br>
-|       ├── database.py <br>
-|       ├── main.py <br>
-|       ├── models.py <br>
-|       ├── music_reviews_app.db <br>
+        ├── __pycache__ <br>
+        ├── venv <br>
+        ├── database.py <br>
+        ├── main.py <br>
+        ├── models.py <br>
+        ├── music_reviews_app.db <br>
 └── frontend <br>
