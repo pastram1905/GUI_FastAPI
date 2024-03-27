@@ -5,7 +5,7 @@
 *   Budeme potřebovat frameworky FastAPI, Uvicorn a SQLAlchemy.<br>Nainstalujeme si to: `pip install fastapi uvicorn sqlalchemy`.
 *   Uděláme soubor `requirements.txt`: `pip freeze > requirements.txt`
 <br>
-Máme mít takovou strukturu projektu:
+Máme mít takovou strukturu projektu:<br>
 ```
 .
 ├── backend
