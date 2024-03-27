@@ -16,3 +16,13 @@ Máme mít takovou strukturu projektu:
                 -models.py
                 -music_reviews_app.db
         -frontend
+
+.
+├── backend
+│   ├── venv
+│   ├── database.py
+│   ├── main.py
+│   ├── models.py
+│   ├── music_reviews_app.db
+│   └── requirements.txt
+└── frontend
