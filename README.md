@@ -5,7 +5,7 @@
 *   Budeme potřebovat frameworky FastAPI, Uvicorn a SQLAlchemy.<br>Nainstalujeme si to: `pip install fastapi uvicorn sqlalchemy`.
 *   Uděláme soubor `requirements.txt`: `pip freeze > requirements.txt`
 <br>
-Máme mít takovou strukturu projektu:<br>
+Máme mít takovou strukturu projektu:
 ```
 .
 ├── backend
@@ -16,6 +16,7 @@ Máme mít takovou strukturu projektu:<br>
 │   ├── music_reviews_app.db
 │   └── requirements.txt
 └── frontend
+```
 
 ## Připojení ke databázi a další nastavení
 Pro jednoduchost budeme použivat SQLite. V souboru `database.py` naimportujeme metody z baličku SQLAlchemy.
