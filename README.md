@@ -141,15 +141,15 @@ def create_review(review: ReviewBase, db: db_dependency):
     db.add(new_review)
     db.commit()
 ```
-Pak dva endpointů s metodou Get:<br>
-Výpis všech recenzí:
+Pak dva endpointů s metodou Get<br>
+* Výpis všech recenzí:
 ```
 @app.get("/reviews", status_code=status.HTTP_200_OK)
 def show_reviews(db: db_dependency, skip: int = 0, limit: int = 100):
     reviews = db.query(models.Review).offset(skip).limit(limit).all()
     return reviews
 ```
-Výpis recenzi podle id:
+* Výpis recenzi podle id:
 ```
 @app.get("/review/{review_id}", status_code=status.HTTP_200_OK)
 def show_review(review_id: int, db: db_dependency):
@@ -157,4 +157,25 @@ def show_review(review_id: int, db: db_dependency):
     if review is None:
         raise HTTPException(status_code=404, detail="Review not found")
     return review
+```
+* Patch: opravit recenzi
+```
+@app.patch("/review/{review_id}", status_code=status.HTTP_200_OK)
+def update_review(review_id: int, review_text: str, db: db_dependency):
+    review = db.query(models.Review).filter(models.Review.id == review_id).first()
+    if review is None:
+        raise HTTPException(status_code=404, detail="Review not found")
+    review.review_text = review_text
+    db.commit()
+    db.refresh(review)
+```
+* Delete: smazat recenzi
+```
+@app.delete("/review/{review_id}", status_code=status.HTTP_200_OK)
+def remove_review(review_id: int, db: db_dependency):
+    review = db.query(models.Review).filter(models.Review.id == review_id).first()
+    if review is None:
+        raise HTTPException(status_code=404, detail="Review not found")
+    db.delete(review)
+    db.commit()
 ```
