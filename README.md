@@ -97,3 +97,31 @@ Dalším krokem je vytvoření tzv. databázové závislosti (db_dependency)
         db.close()
    ```
 3. Závislost: ```db_dependency = Annotated[Session, Depends(get_db)]```
+Celý kód:
+```
+from fastapi import FastAPI, Depends
+from pydantic import BaseModel
+from database import engine, SessionLocal
+from typing import Annotated
+from sqlalchemy.orm import Session
+import models
+
+app = FastAPI()
+
+models.Base.metadata.create_all(bind=engine)
+
+class ReviewBase(BaseModel):
+    username: str
+    song_name: str
+    artist_name: str
+    review_text: str
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+db_dependency = Annotated[Session, Depends(get_db)]
+```
