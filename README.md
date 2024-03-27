@@ -37,8 +37,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 ```
 
-## Definování modelů
-Teď máme založit dvě tabulky (modelů), pro recenze a uživatele.
+## Založení tabulek
+Teď v souboru `models.py` máme založit dvě tabulky, pro recenze a uživatele.
 
 ```
 from sqlalchemy import Column, Integer, String
