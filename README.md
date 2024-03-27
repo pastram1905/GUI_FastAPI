@@ -7,12 +7,12 @@
 <br>
 Máme mít takovou strukturu projektu:
 
-.
-|-- backend
-       |------- __pycache__
-       |------- venv
-       |------- database.py
-       |------- main.py
-       |------- models.py
-       |------- music_reviews_app.db
-|-- frontend
+. <br>
+|-- backend <br>
+       |------- __pycache__ <br>
+       |------- venv <br>
+       |------- database.py <br>
+       |------- main.py <br>
+       |------- models.py <br>
+       |------- music_reviews_app.db <br>
+|-- frontend <br>
