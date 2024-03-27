@@ -8,13 +8,13 @@
 Máme mít takovou strukturu projektu:
 
 ```
-. <br>
-├── backend <br>
-│   ├── venv <br>
-│   ├── database.py <br>
-│   ├── main.py <br>
-│   ├── models.py <br>
-│   ├── music_reviews_app.db <br>
-│   └── requirements.txt <br>
-└── frontend <br>
+.
+├── backend
+│   ├── venv
+│   ├── database.py
+│   ├── main.py
+│   ├── models.py
+│   ├── music_reviews_app.db
+│   └── requirements.txt
+└── frontend
 ```
