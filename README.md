@@ -86,8 +86,8 @@ class ReviewBase(BaseModel):
 
 ## Definování databázové závislosti
 Dalším krokem je vytvoření tzv. databázové závislosti (db_dependency)
-1. vytvoření tabulek: ```models.Base.metadata.create_all(bind=engine)```
-2. funkce, která otevírá Session a po provedení operace jí zavírá
+* vytvoření tabulek: ```models.Base.metadata.create_all(bind=engine)```
+* funkce, která otevírá Session a po provedení operace jí zavírá
    ```
    def get_db():
     db = SessionLocal()
@@ -96,7 +96,7 @@ Dalším krokem je vytvoření tzv. databázové závislosti (db_dependency)
     finally:
         db.close()
    ```
-3. Závislost: ```db_dependency = Annotated[Session, Depends(get_db)]```
+* Závislost: ```db_dependency = Annotated[Session, Depends(get_db)```
 Celý kód:
 ```
 from fastapi import FastAPI, Depends
@@ -125,3 +125,9 @@ def get_db():
 
 db_dependency = Annotated[Session, Depends(get_db)]
 ```
+
+## Komunikace s Reactem
+Pro zajištění komunikaci s Reactem musíme použit metodu add_middleware
+1. `from fastapi.middleware.cors import CORSMiddleware`
+2. origins = ["http://localhost:3000"]
+3. app.add_middleware(CORSMiddleware, allow_origins=origins)
