@@ -60,3 +60,26 @@ class User(Base):
     username = Column(String, unique=True)
     hashed_password = Column(String)
 ```
+
+## Založení aplikace
+Nejprvé máme vytvořit objekt třídy FastAPI, která bude reprezentovat naši aplikaci.
+```
+from fastapi import FastAPI
+
+app = FastAPI()
+```
+
+## Validace dat
+Validaci dat provedeme pomoci knihovny `pydantic`.
+```
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class ReviewBase(BaseModel):
+    username: str
+    song_name: str
+    artist_name: str
+    review_text: str
+```
