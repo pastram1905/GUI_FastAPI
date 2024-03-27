@@ -17,7 +17,7 @@ Máme mít takovou strukturu projektu:
 └── frontend
 ```
 
-## Připojení ke databázi
+## Připojení k databázi
 * Pro jednoduchost budeme použivat SQLite. V souboru `database.py` naimportujeme metody z baličku SQLAlchemy.
 ```
 from sqlalchemy import create_engine
@@ -37,8 +37,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 ```
 
-## Založení tabulek
-Teď v souboru `models.py` máme založit dvě tabulky, pro recenze a uživatele.
+## Založení modelů
+Teď v souboru `models.py` máme založit dva modelů (tabulky), pro recenze a uživatele.
 
 ```
 from sqlalchemy import Column, Integer, String
@@ -83,3 +83,17 @@ class ReviewBase(BaseModel):
     artist_name: str
     review_text: str
 ```
+
+## Definování databázové závislosti
+Dalším krokem je vytvoření tzv. databázové závislosti (db_dependency)
+1. vytvoření tabulek: ```models.Base.metadata.create_all(bind=engine)```
+2. funkce, která otevírá Session a po provedení operace jí zavírá
+   ```
+   def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+   ```
+3. Závislost: ```db_dependency = Annotated[Session, Depends(get_db)]```
