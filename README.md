@@ -19,8 +19,7 @@ Máme mít takovou strukturu projektu:
 
 ## Připojení k databázi
 * Pro jednoduchost budeme použivat SQLite. V souboru `database.py` naimportujeme metody z baličku SQLAlchemy.
-```
-python
+```python
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
